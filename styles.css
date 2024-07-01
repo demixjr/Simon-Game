@@ -9,6 +9,9 @@ body {
   margin:  5%;
   color: #FEF2BF;
 }
+span{
+  color: lawngreen;
+}
 
 .container {
   display: block;
