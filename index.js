@@ -5,7 +5,7 @@ var buttonColors = ["green", "red", "yellow", "blue"];
 
 var level = 0;
 var gameStarted = false;
-
+var maxLevel = 1;
 function startOver() {
     level = 0;
     gamePattern = [];
@@ -26,6 +26,7 @@ function animatePress(currentColor) {
 }
 
 function nextSequence() {
+    $("h5").text("Max level: "+ maxLevel);
     userClickedPattern = [];
     level++;
     $("h1").text("Level " + level);
@@ -40,6 +41,9 @@ function checkAnswer(currentLevel) {
     if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
         if (userClickedPattern.length === gamePattern.length) {
             setTimeout(nextSequence, 500);
+            if(maxLevel<level){
+                maxLevel = level;
+            }
         }
     } else {
         playSound("wrong");
