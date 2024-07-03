@@ -40,7 +40,7 @@ function nextSequence() {
 function checkAnswer(currentLevel) {
     if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
         if (userClickedPattern.length === gamePattern.length) {
-            setTimeout(nextSequence, 500);
+            setTimeout(nextSequence, 1000);
             if(maxLevel<level){
                 maxLevel = level;
             }
